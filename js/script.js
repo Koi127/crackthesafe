@@ -17,13 +17,26 @@ $("#verify").click(function(){
     var num_four=$("#number4").val();
     var your_ans =[num_one, num_two, num_three, num_four];
     console.log(your_ans);
+    console.log(str);
     $("#userChoice").text(your_ans);
-    for(var i = 0; i<str.length()-1; i++){
-        if(str[i].equals(your_ans[i])){
-            
+    str=str.sort();
+    // var i = 0;
+    var number = 0;
+    var exact = 0;
+    var done=false;
+    for(var i=0; i<=str.length-1;i++){
+        if(str[i] === your_ans[i]){
+            exact++;
+            if(exact === str.length){
+                $("#results").text("You are correct!");
+            }
         }
-        
+        if(str.includes(your_ans[i])){
+            number++;
+        }
     }
+
+    $("#results").text("You get " + number + " correct and " + exact +" in exact place");
 });
 
 
