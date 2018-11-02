@@ -19,8 +19,6 @@ $("#verify").click(function(){
     console.log(your_ans);
     console.log(str);
     $("#userChoice").text(your_ans);
-    str=str.sort();
-    // var i = 0;
     var number = 0;
     var exact = 0;
     var done=false;
